@@ -1,1 +1,0 @@
-sno,goodsNo,optionNo,optionValue1,optionValue2,optionValue3,optionValue4,optionValue5,optionPrice,optionCostPrice,optionViewFl,optionSellFl,optionSellCode,optionDeliveryFl,optionDeliveryCode,optionCode,stockCnt,sellStopFl,sellStopStock,confirmRequestFl,confirmRequestStock,optionMemo,deliverySmsSent,regDt,modDt

@@ -1,1 +1,0 @@
-addGoodsNo,applyFl,applyType,applyMsg,applyDt,goodsNm,goodsDescription,scmNo,purchaseNo,commission,goodsModelNo,brandCd,makerNm,imageStorage,imagePath,taxFreeFl,taxPercent,goodsPrice,costPrice,stockUseFl,stockCnt,goodsCd,imageNm,imageRealNm,optionNm,viewFl,soldOutFl,regDt,modDt,kcmarkInfo,goodsMustInfo,addimg,addgdimg
