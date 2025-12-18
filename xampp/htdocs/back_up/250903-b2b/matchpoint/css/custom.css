@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+ * custom css 입니다. 추가적인 css 는 여기에 작성을 해주세요.
+ */
+
+colgroup{
+  display: none!important;
+}
+
+.manam{
+  padding: 5rem;
+  background: #cccccc00;
+  width: 100%;
+}
+.realch{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 1rem;
+}
+
+/* fade-up 효과 */
+
+.body_man section{
+  opacity: 0;
+}
+.body_man .fade-up-section {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.body_man .fade-up-section.visible {
+  opacity: 1;
+}
+/* fade-up 효과 */
+
+.hdcal{
+	display:flex;
+	padding: 0 1rem;
+	justify-content: center;
+}
+
+.xcaout{
+	display:flex;
+	width: 100%;
+	max-width: 1200px;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.xcaout > div{
+	font-size:1.5rem;
+	font-weight:bold;
+	border: 1px solid;
+	padding: 1rem;
+}
+.cate_list.active > ul{
+	display:flex;
+}
+.cate_list{
+  position: fixed;
+  transform: translate(-50%, -0%);
+  top: 10%;
+  left: 50%;
+  height: 0rem;
+  /* transition: all 1s; */
+  /* transition-duration: 7s; */
+  transition: all 0.25s ease-out; /* 시작할 때 가속 */
+  /* animation: 1.3s; */
+  opacity: 0;
+  width: 60%;
+  background: #00000000;
+  display: flex;
+}
+
+#zwpr{
+  font-weight: 400;
+  color: #8d8d8d;
+}
+  .sub_logo img{max-width: 30px;}
+  .sub_logo{ justify-content: center; align-items: center; padding: 2rem 0;}
+
+  .roxton{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .body_man{
+    margin: 4rem 0;
+    /* background: #ccc; */
+  }
+.watermark{
+	font-size: 0.5rem;
+	transform: translate(-50%, -50%) rotate(315deg) !important;
+	color: #000000;
+	background: #fff;
+	opacity: 0.1;
+}
+  .body_man > section{
+    /* margin-bottom: 2rem; */
+    padding: 1rem 0rem 0;
+  }
+.item_basket_type > ul > li{
+	/* overflow:hidden; */
+}
+  .body_man > section:nth-of-type(odd) h3{
+	border-left: 5px solid #ff3535;
+  }
+  .body_man > section:nth-of-type(even) h3{
+	border-left: 5px solid #1c75ff;
+  }
+  .body_man > section:nth-of-type(3n + 3) h3{
+	border-left: 5px solid #ff601c;;
+  }
+  .item_photo_box img{
+  width:100%;
+  max-width: 150px;
+  }
+  .srbox.active {
+  display: flex !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1001;
+  padding: 20px;
+  /* border: 1px solid; */
+  /* width: 60%; */
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+
+
+/* mobile */
+@media (max-width: 767px ) {
+	
+#odxcne .order_table_type tbody{display: flex;}
+
+
+  .footer_wrapper{
+	flex-direction: column;
+  }
+  .header_top_cont h4{
+    display: none;
+  }
+  .header_top_cont i{
+    font-size: 1rem;
+  }
+  .body_man > section > div > div:last-of-type > div > ul{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	}
+  .item_cont{
+    grid-template-columns: 1fr;
+  }
+  
+.cart_cont{
+  grid-template-columns: 1fr;
+}
+.member_cont .base_info_box,
+.member_cont .business_info_box{
+	width: 100%;
+}
+.cate_list ul li{
+	padding:0px;
+}
+.cate_list.active{
+  gap: 0.5rem !important;
+  width: 90% !important;
+  /* padding: 0.5rem !important; */
+}
+#header_warp .cate_list h4,
+.cate_list a{
+  
+  font-size: 1rem;
+}
+
+#odxcne .price_sum_cont .price_sum_list{grid-template-columns: 1fr;}
+
+}
+
+
+@media (max-width: 1280px ){
+  .goods_list_tit > h3{font-size: 1.5rem;}
+  .realch > h2{font-size: 1.75rem;}
+	#odxcne .order_view_info{
+		width: 90%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+}
+
+  @media (min-width: 1930px ){ 
+    .manam{
+      display: none;
+    }
+   }
+

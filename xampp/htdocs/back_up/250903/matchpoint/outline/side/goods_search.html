@@ -1,0 +1,224 @@
+{*** 측면 상품검색 | goods/goods_search.php ***}
+
+<link rel="stylesheet" href="style\sc.css"><!-- 추가 css -->
+
+<style>
+  .price_box input {
+    width: 40%;
+  }
+.sbgoxhd .select_box{
+  display: none;
+}
+  .sbgoxhd > h4  > div:nth-of-type(1){
+display: flex!important;
+  }
+
+  #cateGoods1{
+    /*
+    display: flex !important;
+    */
+  }
+  .chosen-container .chosen-drop {
+    /*
+  position: relative !important;
+  left: 0px!important;
+  */
+  }
+
+
+
+.side_cont,
+  .sub_search_box{
+    display: none !important;
+
+}
+</style>
+
+<div class="sub_search_box">
+    <form  method="post">
+        <fieldset  id="frmSearchDetail">
+            <!--{ ? search['quickBrandGoods'] }-->
+            <!--{ @ search['quickBrandGoods'] }-->
+            <!--{ ? .value_ }-->
+            <input type="hidden" name="quickBrandGoods[]" value="{=.value_}">
+            <!--{ / }-->
+            <!--{ / }-->
+            <!--{ / }-->
+            <!--{ ?  in_array('category',goodsConfig.searchType) }-->
+            <dl>
+                <dt>{=__('카테고리')}</dt>
+                <dd>
+                    {=cateDisplay}
+                </dd>
+            </dl>
+            <!--{ / }-->
+            <!--{ ?  in_array('brand',goodsConfig.searchType)  && goodsData.listSearch.brandSearchList && paycosearchUse == false }-->
+            <dl>
+                <dt>{=__('브랜드')}</dt>
+                <dd>
+                    <div class="benefit_box">
+                        <!--{ @ goodsData.listSearch.brandSearchList }-->
+                        <!--{ ?  .brandNm && .brandCnt }-->
+                        <span>
+                            <input type="checkbox" id="brand_{.brandCd}" name="brand[]" value="{.brandCd}" <!--{ ?  is_array(search.brand) && in_array(.brandCd,search.brand) }--> checked='checked'   <!--{ / }-->  <!--{ ?  .disabledFl }--> disabled='disabled'<!--{ / }-->>
+                            <label for="brand_{.brandCd}" class="<!--{ ?  is_array(search.brand) && in_array(.brandCd,search.brand) }--> on <!--{ / }-->" title="">{.brandNm} ({.brandCnt})</label>
+                        </span>
+                        <!--{ / }-->
+                        <!--{ / }-->
+
+                    </div>
+                </dd>
+            </dl>
+            <!--{ / }-->
+            <!--{ ?  (in_array('delivery',goodsConfig.searchType)  || in_array('regdt',goodsConfig.searchType)) && paycosearchUse == false  }-->
+            <dl>
+                <dt>{=__('혜택')}/{=__('조건')}</dt>
+                <dd>
+                    <div class="benefit_box">
+                        <!--{ ?  in_array('delivery',goodsConfig.searchType)   }-->
+                        <span>
+                            <input type="checkbox" id="freeDelivery" name="freeDelivery" value="y" <!--{ ? search.freeDelivery == 'y'  }--> checked='checked'   <!--{ / }-->>
+                            <label for="freeDelivery" class="<!--{ ? search.freeDelivery == 'y'  }--> on   <!--{ / }-->" title="{=__('무료배송')}">{=__('무료배송')}</label>
+                        </span>
+                        <!--{ / }-->
+                        <!--{ ?  in_array('regdt',goodsConfig.searchType)  }-->
+                        <span>
+                            <input type="checkbox" id="newGoods" name="newGoods" value="y" <!--{ ? search.newGoods == 'y'  }--> checked='checked'   <!--{ / }-->>
+                            <label for="newGoods" class="<!--{ ? search.newGoods == 'y'  }--> on <!--{ / }-->" title="{=__('최근등록상품')}">{=__('최근등록상품')}</label>
+                        </span>
+                        <!--{ / }-->
+                    </div>
+                </dd>
+            </dl>
+            <!--{ / }-->
+            <!--{ ?  in_array('color',goodsConfig.searchType) }-->
+            <dl>
+                <dt>{=__('색상')}</dt>
+                <dd>
+                    <div class="color_box">
+                        <!--{ @ goodsColorList}-->
+                        <span>
+                            <input type="checkbox" id="searchColor{.value_}" name="goodsColor[]" value="{.value_}" <!--{ ?  is_array(search.goodsColor) && in_array(.value_,search.goodsColor) }--> checked='checked'   <!--{ / }-->>
+                            <label for="searchColor{.value_}" class="check-s <!--{ ?  is_array(search.goodsColor) && in_array(.value_,search.goodsColor) }--> active <!--{ / }--> <!--{ ?  .value_ == 'FFFFFF' }--> color-white  <!--{ / }--> "  <!--{ ?  .value_ != 'FFFFFF' }-->style="background:#{.value_}" <!--{ / }--> title="{.value_}">{.value_}</label>
+                        </span>
+                        <!--{ / }-->
+                    </div>
+                </dd>
+            </dl>
+            <!--{ / }-->
+            <!--{ ?  in_array('price',goodsConfig.searchType) }-->
+            <dl>
+                <dt>{=__('가격')}</dt>
+                <dd>
+                    <div class="price_box">
+                        {=gd_global_currency_symbol()}<input type="text" class="text" name="goodsPrice[]" value="{=search.goodsPrice[0]}"><span> ~ </span>
+                        <input type="text" class="text" name="goodsPrice[]" value="{=search.goodsPrice[1]}"><span>{=gd_global_currency_string()}</span>
+                    </div>
+                </dd>
+            </dl>
+            <!--{ / }-->
+            <!--{ ?  in_array('icon',goodsConfig.searchType) }-->
+            <dl>
+                <dt>{=__('아이콘')}</dt>
+                <dd>
+                    <div class="benefit_box">
+                        <!--{ @ goodsIconList }-->
+                        <!--{ ? .iconImage }-->
+                        <span>
+                            <input type="checkbox" id="searchIcon{.sno}"  class="checkbox"  name="goodsIcon[{.iconPeriodFl}][]"  value="{.iconCd}" <!--{ ? is_array(search.goodsIcon) && is_array(search.goodsIcon[.iconPeriodFl]) && in_array(.iconCd,search.goodsIcon[.iconPeriodFl]) }--> checked='checked'   <!--{ / }--> >
+                            <label for="searchIcon{.sno}" class="check-s <!--{ ? is_array(search.goodsIcon) && is_array(search.goodsIcon[.iconPeriodFl]) && in_array(.iconCd,search.goodsIcon[.iconPeriodFl]) }--> on <!--{ / }-->" title="{.iconNm}">{=.iconImage}</label>
+                        </span>
+                        <!--{ / }-->
+                        <!--{ / }-->
+                    </div>
+                </dd>
+            </dl>
+            <!--{ / }-->
+
+
+            <div class="szseb" style="display: none;">
+              <div class="select_box">
+                <div id="cateGoods1" style="display: flex; flex-wrap: wrap;">
+                  <div class="sbgoxhd">
+                  <h4>{=cateDisplay}</h4>
+                  </div>
+                  <span>
+                    <input type="radio" id="cateGoods_001" name="cateGoods[]" value="001">
+                    <label for="cateGoods_001">SODA</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_002" name="cateGoods[]" value="002">
+                    <label for="cateGoods_002">BOLIN</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_003" name="cateGoods[]" value="003">
+                    <label for="cateGoods_003">Blackmagic Design</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_004" name="cateGoods[]" value="004">
+                    <label for="cateGoods_004">CANON</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_005" name="cateGoods[]" value="005">
+                    <label for="cateGoods_005">Lumantek</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_006" name="cateGoods[]" value="006">
+                    <label for="cateGoods_006">RTcom</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_007" name="cateGoods[]" value="007">
+                    <label for="cateGoods_007">AVer</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_008" name="cateGoods[]" value="008">
+                    <label for="cateGoods_008">NTU</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_009" name="cateGoods[]" value="009">
+                    <label for="cateGoods_009">LED</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_010" name="cateGoods[]" value="010">
+                    <label for="cateGoods_010">Lighting</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_011" name="cateGoods[]" value="011">
+                    <label for="cateGoods_011">NDI</label>
+                  </span>
+                  <span>
+                    <input type="radio" id="cateGoods_012" name="cateGoods[]" value="012">
+                    <label for="cateGoods_012">Outdoor</label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="quick_btn"><input type="button" id="btnSearchSubmit" value="{=__('검색')}"></div>
+        </fieldset>
+    </form>
+</div>
+<!-- //sub_search_box -->
+
+<!-- 
+<select name="key" class="chosen-select">
+<option value="goodsNm">상품명
+</option>
+<option value="goodsNo">상품코드
+</option>
+<option value="goodsCd">자체상품코드
+</option>
+<option value="makerNm">제조사
+</option>
+<option value="originNm">원산지
+</option>
+<option value="goodsSearchWord" selected="selected">검색키워드
+</option>
+</select>
+
+-->
+
+
+<!-- chosen-container chosen-container-single chosen-container-single-nosearch chosen-container-active chosen-with-drop -->

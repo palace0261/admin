@@ -1,0 +1,4 @@
+update es_addGoods set makerNm=REPLACE(makerNm,'%',',')
+
+[% => ,으로 변환 업데이트 = 필드명]
+update 테이블명 set 필드명=REPLACE(필드명,'찾는문자열','수정할 문자열')

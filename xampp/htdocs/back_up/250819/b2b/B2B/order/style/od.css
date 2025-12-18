@@ -1,0 +1,125 @@
+  @charset "utf-8";
+/* CSS Document */
+#deliveryChargeText{
+ margin:0
+}
+.tobe_mileage{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.25rem;
+  margin: 0rem 1rem 1rem;
+}
+.order_wrap table{
+ width:100%;
+}
+.order_wrap{
+ width:100%;
+}
+
+.td_left > div:first-child > span,
+.td_left > div:first-child > span + div > em{
+ background:#ccc;
+ display: none;
+}
+
+.pick_add_plus{
+  display: none;
+}
+.order_table_type tbody td:nth-of-type(4){
+  display: none;
+ }
+.sub_content{
+ padding:1rem;
+}
+ .order_table_type thead th:nth-of-type(4){
+  display: none;
+ }
+.order_table_type td{
+ width:100%;
+ display: flex;
+}
+.pick_add_list{width: 90%;padding-left: 1rem;}
+.order_tit ol{
+ display:grid;
+ grid-template-columns:1fr 1fr 1fr;
+ gap: 1rem;
+ padding: 1rem 0;
+ margin-top: 1rem;
+ font-size: 0.75rem;
+ align-items: center;
+ justify-content: center;
+ justify-items: center;
+ border-top: 1px solid #ebebeb;
+ border-bottom: 1px solid #ebebeb;
+ background: #f6f6f6;
+}
+.btn_gray_list{
+ background: #dbe8ff;
+ border-radius: 0.5rem;
+ padding: 0.5rem;
+ color: #fff;
+}
+ .order_table_type tr{
+  display: grid;
+  grid-template-columns: 0.1fr 7fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 3px solid #bbbbbb;
+  align-items: center;
+  justify-items: start;
+  background: #ffffff;
+  color: #121212;
+ }
+.pick_add_list > div {
+ display: grid;
+ grid-template-columns: 1fr 3fr;
+ padding: 1rem;
+ margin:1rem 0;
+ /* border-bottom: 1px solid #ccc; */
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ /* transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+ /* width: 100%; */
+ position: relative;
+ box-sizing: border-box;
+}
+.pick_add_list > div span > img{
+ width:100%;
+ max-width: 9rem;
+}
+.price_sum_list{
+ display:grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ background: #dbe8ff;
+ padding: 0.5rem;
+ margin: 0.5rem;
+ align-items: center;
+ justify-items: center;
+ /* border-bottom: 1px solid #ccc; */
+ border-radius: 1rem;
+}
+.btn_order_box{
+ display:flex;
+ padding: 0 1rem;
+ gap: 2rem;
+ margin-bottom: 3rem;
+}
+.btn_order_box > span:nth-of-type(1){
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ width: 100%;
+ gap: 1rem;
+}
+.btn_order_box > span:nth-of-type(2){
+ display:flex;
+ flex-wrap: wrap;
+ width: 100%;
+ gap: 1rem;
+ justify-content: flex-end;
+}
+.btn_right_box .btn_order_whole_buy{
+ color:#fff;
+ background: #5137f0;
+ border: 0px;
+ box-shadow: 10px 10px 16px 0px rgba(82, 82, 82, .39);
+}
+

@@ -1,0 +1,338 @@
+{*** 상단 기본파일 | main/index.php ***}
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+<!-- sub head -->
+<div class="sub_logo" style="display: none;">
+  <!--{ @dataBanner('2838517793') }-->{.tag}<!--{ / }-->
+   <span style="color: #ccc;">ㅣ</span><h2>소다미디어 B2B 몰</h2>
+</div>
+
+
+
+<style>
+  #o3{
+    background-color: #f5f5f5;
+  }
+  #header .header_top {
+    position: fixed;
+    width: 100%;
+    background-color: #001a36;
+    z-index: 666;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    border-bottom: 3px solid #c20000;
+    transition: 0.5s all;
+    animation: 0.5s all;
+    
+  }
+  .logos{
+  display: flex;
+  gap: 0.5rem;
+  align-items:center;
+}
+  .logos img{
+    max-width: 1.5rem;
+  }
+</style>
+
+
+<script>
+let lastScrollTop = window.scrollY;
+let threshold = 30; // 스크롤 차이 임계값
+window.addEventListener('scroll', function() {
+  const headerTop = document.querySelector('#header .header_top');
+  const currentScroll = window.scrollY;
+  if (currentScroll < lastScrollTop) {
+    // 스크롤을 올릴 때 항상 보이게
+    headerTop.style.opacity = '1';
+    headerTop.style.top = '0';
+  } else if (currentScroll > lastScrollTop + threshold) {
+    // 스크롤을 아래로 내릴 때만 임계값 적용
+    headerTop.style.opacity = '0.5';
+    headerTop.style.top = '-42px';
+  }
+  lastScrollTop = currentScroll;
+});
+</script>
+
+
+
+<div id="header">
+
+    <div class="header_top">
+        <div class="header_top_cont">
+
+            <div class="logos">
+              <!--{ @dataBanner('2838517793') }-->{.tag}<!--{ / }-->
+              <a href="/"><h4>소다미디어 B2B 몰</h4></a>
+            </div>
+            <div class="secr">
+                  <i class="fa fa-search"></i><h4>검색창</h4>
+                <!-- //header_search_cont -->
+            </div>
+            <style>
+            </style>
+            <script>
+              document.querySelector('.secr').addEventListener('click', function() {
+                const srbox = document.querySelector('.srbox');
+                srbox.classList.toggle('active');
+                if (!srbox.classList.contains('active')) {
+                  srbox.style.display = 'none';
+                } else {
+                  srbox.style.display = 'flex';
+                }
+              });
+
+              // srbox 영역 밖 클릭 시 닫기
+              document.addEventListener('mousedown', function(e) {
+                const srbox = document.querySelector('.srbox');
+                const secr = document.querySelector('.secr');
+                if (srbox.classList.contains('active')) {
+                  if (!srbox.contains(e.target) && !secr.contains(e.target)) {
+                    srbox.classList.remove('active');
+                    srbox.style.display = 'none';
+                  }
+                }
+              });
+            </script>
+
+            <ul class="top_member_box">
+                <!--{ ? gd_is_login() === false }-->
+                    <li><a href="../member/login.php">Login</a><span class="txt_bar"></span></li>
+                <li><a href="../member/join_method.php">Join</a><span class="txt_bar"></span>
+                    <!--<span class="accent">
+                        <span><strong>2,000 P</strong></span>
+                    </span>-->
+                </li>
+                <!--{ : }-->
+                
+                <!--{ / }-->
+                <li>
+                    <div class="top_mypage_cont">
+                        <span class="top_mypage_tit">
+                          <a href="../mypage/index.php"><i class="fa fa-user"></i><h4>회원정보</h4></a>
+                        </span>
+                        <!-- 가림 
+                        <ul class="top_mypage_list_item" style="display:none;">
+                            <li><a href="../mypage/order_list.php">{=__('주문조회')}</a></li>
+                            
+                            <li><a href="../mypage/wish_list.php">{=__('찜 리스트')}</a></li>
+                            <li><a href="../mypage/mypage_qa.php">1:1 {=__('문의')}</a></li>
+                            <li><a href="../member/logout.php?returnUrl={=logoutReturnUrl}">로그아웃</a></span></li>
+                        </ul>-->
+                    </div>
+                    <span class="txt_bar"></span>
+                </li>
+            </ul>
+            <!-- //header_search -->
+             
+                <div>
+                  <a href="../order/cart.php" class="sowzsw">
+                    
+                  <i class="fa fa-shopping-cart"></i>
+                  <h4>장바구니</h4><span>{=dataCartGoodsCnt()}</span>
+                  </a></div>
+        
+            <div class="catelist_btn">
+            <i class="fa fa-bars"></i><h4>카테고리</h4>
+          </div>
+
+        </div>
+        <!-- //header_top_cont -->
+
+                    <!-- 검색 폼 -->
+                     <div class="srbox" style="display: none;">
+                    {=includeWidget('proc/_header_search.html')}
+                    <!-- 검색 폼 -->
+                     </div>
+                     
+            <div class="cate_list" >
+              <ul>
+                <h4><a href="/prd/pd.php"><h4>SODA</h4></a></h4>
+                <a href="/prd/pd.php#prd43"><li>PTZ 카메라</li></a>
+                <a href="/prd/pd.php#prd8"><li>벽부 브라켓</li></a>
+                <a href="/prd/pd.php#prd10"><li>컨트롤러</li></a>
+                <a href="/prd/pd.php#prd9"><li>POV 카메라</li></a>
+                <a href="/prd/pd.php#prd11"><li>스위처</li></a>
+                <a href="/prd/pd.php#prd12"><li>자막기</li></a>
+                <a href="/prd/pd.php#prd13"><li>리피터</li></a>
+                <a href="/prd/pd.php#prd14"><li>컨버터</li></a>
+                <a href="/prd/pd.php#prd15"><li>외장 캡쳐</li></a>
+                <a href="/prd/pd.php#prd16"><li>P/T 헤드</li></a>
+                <a href="/prd/pd.php#prd17"><li>세트 할인</li></a>
+              </ul>
+              <ul>
+                <h4><a href="/prd/pdca.php#"><h4>CANON</h4></a></h4>
+                <a href="/prd/pdca.php#prd18"><li>PTZ 카메라</li></a>
+                <a href="/prd/pdca.php#prd19"><li>벽부 브라켓</li></a>
+                <a href="/prd/pdca.php#prd20"><li>컨트롤러</li></a>
+                <a href="/prd/pdca.php#prd21"><li>P/T 헤드</li></a>
+                <a href="/prd/pdca.php#prd22"><li>캠코더</li></a>
+              </ul>
+              <ul>
+                <h4><a href="/prd/pdbmd.php"><h4>BMD</h4></a></h4>
+                <a href="/prd/pdbmd.php#prd23"><li>비디오 스위처</li></a>
+                <a href="/prd/pdbmd.php#prd24"><li>내장형 캡쳐</li></a>
+                <a href="/prd/pdbmd.php#prd25"><li>외장형 캡쳐</li></a>
+                <a href="/prd/pdbmd.php#prd26"><li>스트리밍 장비</li></a>
+                <a href="/prd/pdbmd.php#prd27"><li>카메라</li></a>
+                <a href="/prd/pdbmd.php#prd28"><li>컨버터</li></a>
+                <a href="/prd/pdbmd.php#prd29"><li>네트워크 스토리지</li></a>
+                <a href="/prd/pdbmd.php#prd30"><li>멀티뷰</li></a>
+                <a href="/prd/pdbmd.php#prd31"><li>모니터</li></a>
+                <a href="/prd/pdbmd.php#prd32"><li>녹화기</li></a>
+                <a href="/prd/pdbmd.php#prd33"><li>표준변환</li></a>
+                <a href="/prd/pdbmd.php#prd34"><li>비디오 라우터</li></a>
+                <a href="/prd/pdbmd.php#prd35"><li>액세서리</li></a>
+              </ul>
+              <ul>
+                <h4>루먼텍</h4>
+                <a href="/prd/pdlm.php#prd37"><li>스위처</li></a>
+                <a href="/prd/pdlm.php#prd38"><li>자막기</li></a>
+                <a href="/prd/pdlm.php#prd39"><li>컨버터</li></a>
+                <a href="/prd/pdlm.php#prd40"><li>분배기</li></a>
+                <a href="/prd/pdlm.php#prd41"><li>라우터</li></a>
+                <a href="/prd/pdlm.php#prd42"><li>모듈레이터</li></a>
+              </ul>
+              <ul>
+                <h4>RTcom</h4>
+                <a href="/prd/pdrt.php#prd46"><li>HDMI 분배기</li></a>
+                <a href="/prd/pdrt.php#prd47"><li>HDMI 매트릭스</li></a>
+                <a href="/prd/pdrt.php#prd48"><li>HDMI 선택기</li></a>
+              </ul>
+              <ul>
+                <h4>AVer</h4>
+                <a href="/prd/pdaver.php#prd49"><li>강사추적 PTZ</li></a>
+                <a href="/prd/pdaver.php#prd50"><li>의료용 PTZ</li></a>
+              </ul>
+              <ul>
+                <h4>NTU</h4>
+                <a href="/prd/pdntu.php#prd51"><li>스위처</li></a>
+                <a href="/prd/pdntu.php#prd52"><li>매트릭스</li></a>
+                <a href="/prd/pdntu.php#prd53"><li>분배기</li></a>
+                <a href="/prd/pdntu.php#prd54"><li>모듈레이터</li></a>
+              </ul>
+              <ul>
+                <h4>NDI</h4>
+                <a href="/prd/pdndi.php#prd60"><li>NDI PTZ</li></a>
+                <a href="/prd/pdndi.php#prd61"><li>NDI 컨트롤러</li></a>
+                <a href="/prd/pdndi.php#prd62"><li>NDI 디코더</li></a>
+              </ul>
+              <ul>
+                <h4>아웃도어</h4>
+                <a href="/prd/pdout.php#prd63"><li>옥외용 PTZ</li></a>
+                <a href="/prd/pdout.php#prd64"><li>컨트롤러</li></a>
+              </ul>
+              <ul>
+                <h4>LED</h4>
+                <a href="/prd/pdled.php#prd55"><li>2.5mm 다이캐스팅</li></a>
+                <a href="/prd/pdled.php#prd56"><li>1.86mm 다이캐스팅</li></a>
+                <a href="/prd/pdled.php#prd57"><li>LED Processor</li></a>
+              </ul>
+              <ul>
+                <h4>조명</h4>
+                <a href="/prd/pdlit.php#prd58"><li>Lighting</li></a>
+                <a href="/prd/pdlit.php#prd59"><li>DMX Controller</li></a>
+              </ul>
+            </div>
+            
+
+
+    </div>
+    <!-- //header_top -->
+	
+
+</div>
+<!-- //header -->
+
+
+<div class="panam" style="padding: 1.75rem;">
+
+</div>
+
+<style>
+.cate_list.active {
+  display: flex !important;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 651;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  overflow-y: scroll;
+  max-width: 1200px;
+  /* max-height: 400px; */
+  width: 81%;
+  height: 80%;
+  max-height:680px;
+}
+</style>
+
+<script>
+document.querySelector('.catelist_btn').addEventListener('click', function() {
+  const cateList = document.querySelector('.cate_list');
+  cateList.classList.toggle('active');
+  if (!cateList.classList.contains('active')) {
+    cateList.style.opacity = '0';
+  } else {
+    cateList.style.opacity = '1';
+  }
+});
+
+// cate_list 영역 밖 클릭 시 닫기
+document.addEventListener('mousedown', function(e) {
+  const cateList = document.querySelector('.cate_list');
+  const btn = document.querySelector('.catelist_btn');
+  if (cateList.classList.contains('active')) {
+    if (!cateList.contains(e.target) && !btn.contains(e.target)) {
+      cateList.classList.remove('active');
+    cateList.style.opacity = '0';
+    }
+  }
+});
+
+// ul 내 a 태그 클릭 시 닫기
+document.querySelectorAll('.cate_list ul a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    const cateList = document.querySelector('.cate_list');
+    cateList.classList.remove('active');
+    cateList.style.opacity = '0';
+  });
+});
+</script>
+
+
+<div class="hdcal" style="display: none;">
+  <section class="xcaout">
+  </section>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cateList = document.querySelector('.cate_list');
+    const xcaout = document.querySelector('.xcaout');
+    if (cateList && xcaout) {
+      const uls = cateList.querySelectorAll('ul');
+      xcaout.innerHTML = ''; // 초기화
+      uls.forEach(function(ul) {
+        const h4 = ul.querySelector('h4');
+        if (h4) {
+          const div = document.createElement('div');
+          const h4Clone = h4.cloneNode(true);
+          div.appendChild(h4Clone);
+          xcaout.appendChild(div);
+        }
+      });
+    }
+  });
+</script>
+
+
+

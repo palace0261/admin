@@ -1,0 +1,193 @@
+{*** 상단 기본파일 | main/index.php ***}
+
+{*
+<script>
+  // 마우스 드래그, 복사, 캡처, 우클릭 등 방지
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+  document.addEventListener('keydown', function(e) {
+    // PrintScreen, Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+U, Ctrl+S, Ctrl+P
+    if (
+      e.key === 'PrintScreen' ||
+      e.key === 'PrtScSysRq' ||
+      (e.ctrlKey && ['c', 'v', 'x', 'u', 's', 'p'].includes(e.key.toLowerCase())) ||
+      ((e.metaKey || e.key === 'Meta') && e.key.toLowerCase() === 'printscreen') || // MacOS PrintScreen
+      ((e.key === 'Meta' || e.key === 'OS') && e.key.toLowerCase() === 'printscreen') // Windows key + PrintScreen
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+*}
+
+<style>
+  #o3{
+    background-color: #f5f5f5;
+  }
+</style>
+
+
+<div id="header">
+
+    <div class="header_top">
+        <div class="header_top_cont">
+          <div class="catelist_btn">
+            <img src="https://cdn-saas-web-203-199.cdn-nhncommerce.com/soda0041093_godomall_com/data/skin/front/matchpoint/img/common/btn/btn_allmenu_open.png" alt="">
+          </div>
+            <div class="cate_list" style="display: none;">
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+              <ul>
+                <h4>소다미디어</h4>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+                <li>카메라</li>
+              </ul>
+            </div>
+
+            <div class="h1_logo" style="display: none;"><!--{ @dataBanner('4238483832') }-->{.tag}<!--{ / }--></div>
+
+            <ul class="top_member_box">
+                <!--{ ? gd_is_login() === false }-->
+                    <li><a href="../member/login.php">Login</a><span class="txt_bar"></span></li>
+                <li><a href="../member/join_method.php">Join</a><span class="txt_bar"></span>
+                    <!--<span class="accent">
+                        <span><strong>2,000 P</strong></span>
+                    </span>-->
+                </li>
+                <!--{ : }-->
+                <li><a href="../member/logout.php?returnUrl={=logoutReturnUrl}">Logout</a><span class="txt_bar"></span></li>
+                <!--{ / }-->
+                <li>
+                    <div class="top_mypage_cont">
+                        <span class="top_mypage_tit"><a href="../mypage/index.php">Mypage</a></span>
+                        <ul class="top_mypage_list_item" style="display:none;">
+                            <li><a href="../mypage/order_list.php">{=__('주문조회')}</a></li>
+                            <li><a href="../mypage/my_page_password.php">{=__('내정보수정')}</a></li>
+                            <li><a href="../mypage/wish_list.php">{=__('찜 리스트')}</a></li>
+                            <li><a href="../mypage/mypage_qa.php">1:1 {=__('문의')}</a></li>
+                        </ul>
+                    </div>
+                    <span class="txt_bar"></span>
+                </li>
+                <li><a href="../order/cart.php">{=__('CART')}<strong class="cart-count">{=dataCartGoodsCnt()}</strong></a><span class="txt_bar"></span></li>
+            </ul>
+            <div class="header_search">
+                <div class="header_search_cont">
+        
+                    <!-- 검색 폼 -->
+                    {=includeWidget('proc/_header_search.html')}
+                    <!-- 검색 폼 -->
+        
+                </div>
+                <!-- //header_search_cont -->
+            </div>
+            <!-- //header_search -->
+        </div>
+        <!-- //header_top_cont -->
+    </div>
+    <!-- //header_top -->
+	
+
+</div>
+<!-- //header -->
+
+<style>
+.cate_list.active {
+  display: flex !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+</style>
+
+<script>
+document.querySelector('.catelist_btn').addEventListener('click', function() {
+  const cateList = document.querySelector('.cate_list');
+  cateList.classList.toggle('active');
+  if (!cateList.classList.contains('active')) {
+    cateList.style.display = 'none';
+  } else {
+    cateList.style.display = 'flex';
+  }
+});
+</script>

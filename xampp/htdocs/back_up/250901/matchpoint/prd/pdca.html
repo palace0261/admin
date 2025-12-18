@@ -1,0 +1,82 @@
+{ #header }
+
+<style>
+    html {
+    scroll-behavior: smooth;
+  }
+  .body_man ::-webkit-scrollbar {
+  display: none;
+}
+  .body_man {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+</style>
+  
+<!-- 파비콘 링크 추가 -->
+<link rel="shortcut icon" href="https://cdn-saas-web-203-199.cdn-nhncommerce.com/soda0041093_godomall_com/data/skin/front/matchpoint/main/xxzx.ico" type="image/x-icon">
+<link rel="icon" href="https://cdn-saas-web-203-199.cdn-nhncommerce.com/soda0041093_godomall_com/data/skin/front/matchpoint/main/xxzx.ico" type="image/x-icon">
+
+
+<!-- 스크립트 -->
+<script src="../prd/js/wtm.js"></script>
+<script src="../prd/js/fufd.js"></script>
+<script src="../prd/js/mucd.js"></script>
+
+
+
+
+<div class="wmar" style="display: none;">
+  {=gSess.memId}ㅣ{=gSess.memNm}ㅣ{=gSess.memId}ㅣ{=gSess.memNm}
+</div>
+
+
+<body>
+
+  <div style="display: none;">
+    {=setData}
+  </div>
+
+  <div class="body_man">
+
+
+  <div class="realch">
+    <h2>캐논 영상시스템 단가표</h2>
+  </div>
+  <div class="roxton">
+    <span>
+      <script>
+      document.write(new Date().getFullYear() + '년 ' + (new Date().getMonth() + 1) + '월');
+      </script>
+      / VAT 포함
+    </span>
+  </div>
+
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','18')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','19')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','20')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','21')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','22')}
+    </section>
+
+
+  </div>
+
+</body>
+
+{ #footer }

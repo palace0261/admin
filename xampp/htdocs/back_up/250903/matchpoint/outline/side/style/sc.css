@@ -1,0 +1,18 @@
+/* mp.css - UTF-8 encoding */
+@charset "UTF-8";
+
+
+.sub_content{
+  display: grid; 
+}
+.sub_content .content{
+  margin-top: 2rem;
+}
+/* mobile */
+@media (max-width: 767px ) {
+.sub_content{
+}
+.sub_menu_box{
+  display: none;
+}
+}

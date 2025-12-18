@@ -1,0 +1,234 @@
+{ #header }
+
+<!--
+검색페이지 입력폼 추가
+-->
+
+<style>
+    html {
+    scroll-behavior: smooth;
+  }
+  .body_man ::-webkit-scrollbar {
+  display: none;
+}
+  .body_man {
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+.item_name_explain{
+  display: flaex !important;
+}
+
+</style>
+<!-- item_info_cont -->
+  
+<!-- 파비콘 링크 추가 -->
+<link rel="shortcut icon" href="https://cdn-saas-web-203-199.cdn-nhncommerce.com/soda0041093_godomall_com/data/skin/front/matchpoint/main/xxzx.ico" type="image/x-icon">
+<link rel="icon" href="https://cdn-saas-web-203-199.cdn-nhncommerce.com/soda0041093_godomall_com/data/skin/front/matchpoint/main/xxzx.ico" type="image/x-icon">
+
+
+<!-- 스크립트 -->
+<script src="../prd/js/wtm.js"></script>
+<script src="../prd/js/fufd.js"></script>
+<script src="../prd/js/mucd.js"></script>
+
+
+
+
+<div class="wmar" style="display: none;">
+  {=gSess.memId}ㅣ{=gSess.memNm}ㅣ{=gSess.memId}ㅣ{=gSess.memNm}
+</div>
+
+
+<body>
+
+  <div style="display: none;">
+    {=setData}
+  </div>
+
+  <div class="body_man">
+  <div class="realch">
+    <h2>소다미디어 영상시스템 단가표</h2>
+  </div>
+  <div class="roxton">
+    <span>
+      <script>
+      document.write(new Date().getFullYear() + '년 ' + (new Date().getMonth() + 1) + '월');
+      </script>
+      / VAT 포함
+    </span>
+  </div>
+  
+  <!-- 검색 폼 추가 -->
+  <div style="margin: 20px 0;">
+    <form id="searchForm" onsubmit="return searchItemExplain();">
+      <input type="text" id="searchInput" placeholder="item_name_explain 검색" />
+      <button type="submit">검색</button>
+    </form>
+  </div>
+
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','43')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','44')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','45')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','8')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','10')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','9')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','11')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','12')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','13')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','14')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','15')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','16')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','17')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','36')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','23')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','24')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','25')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','26')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','27')}
+    </section>
+
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','28')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','29')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','30')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','31')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','32')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','33')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','34')}
+    </section>
+    <section>
+      {=includeWidget('goods/_goods_display_main.html','sno','35')}
+    </section>
+
+  </div>
+
+
+  <script>
+  function searchItemExplain() {
+    var query = document.getElementById('searchInput').value.trim().toLowerCase();
+    var items = document.querySelectorAll('.item_info_cont');
+    var found = false;
+
+    if (!query) {
+      // 검색어가 없으면 모든 제품을 보이게 하고 배경 초기화
+      items.forEach(function(item) {
+        item.style.background = '';
+        var itemCont = item.closest('.item_cont');
+        var li = itemCont ? itemCont.closest('li') : null;
+        if (li) li.style.display = '';
+      });
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(section) {
+        section.style.display = '';
+      });
+      return false;
+    }
+
+    items.forEach(function(item) {
+      var itemCont = item.closest('.item_cont');
+      var li = itemCont ? itemCont.closest('li') : null;
+
+      if (item.textContent.toLowerCase().includes(query)) {
+        item.style.background = '#ffff99';
+        if (li) li.style.display = '';
+        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        found = true;
+      } else {
+        item.style.background = '';
+        if (li) li.style.display = 'none';
+      }
+    });
+
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+      if (section.offsetHeight <= 100) {
+        section.style.display = 'none';
+      } else {
+        section.style.display = '';
+      }
+    });
+
+    if (!found) {
+      // 검색 결과가 없으면 아무 것도 숨기지 않음
+      items.forEach(function(item) {
+        var itemCont = item.closest('.item_cont');
+        var li = itemCont ? itemCont.closest('li') : null;
+        if (li) li.style.display = '';
+        item.style.background = '';
+      });
+      var sections = document.querySelectorAll('section');
+      sections.forEach(function(section) {
+        section.style.display = '';
+      });
+      alert('검색 결과가 없습니다.');
+    }
+    return false;
+  }
+
+</script>
+
+
+
+</body>
+
+<script></script>
+
+{ #footer }
