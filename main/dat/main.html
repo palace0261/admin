@@ -17,20 +17,19 @@
   <meta property="og:site_name" content="관리모드" />
 
   <link rel="canonical" href="/">
-
   <link rel="icon" href="/" type="image/x-icon">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>관리 페이지</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="../../css/dot/font.css">
-
-  <!-- Swiper CSS -->
+  <!-- Swiper  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/dot/font.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../css/mediaHover.css">
+
+  <title>관리 페이지</title>
 
 </head>
 
@@ -61,38 +60,65 @@
     </section>
 
     <section id="about" class="section">
-      <h2>요청사항</h2>
+      <h2>Paly</h2>
       <div class="card-grid">
-        <div class="card">
-          <h3>test</h3>
-          <p>Leading innovation in our industry</p>
-        </div>
-        <div class="card">
-          <h3>Vision</h3>
-          <p>Leading innovation in our industry</p>
-        </div>
-        <div class="card">
-          <h3>Values</h3>
-          <p>Integrity, quality, and customer focus</p>
-        </div>
+        <a href="../play/cmpx.html">
+          <div class="card">
+            <h3>PX-Size</h3>
+          </div>
+        </a>
+        <a href="../play/ranum.html">
+          <div class="card">
+            <h3>Randum</h3>
+          </div>
+        </a>
+        <a href="../play/tienlen.html">
+          <div class="card">
+            <h3>tienlen</h3>
+          </div>
+        </a>
       </div>
     </section>
 
     <section id="about" class="section">
-      <h2>About Us</h2>
+      <h2>Site</h2>
       <div class="card-grid">
+        <a href="https://www.sodamedia.shop/">
+          <div class="card">
+            <h3>SODA SHOP</h3>
+          </div>
+        </a>
+        <a href="../play/ranum.html">
+          <div class="card">
+            <h3>Randum</h3>
+          </div>
+        </a>
+        <a href="../sv/test.html">
+          <div class="card">
+            <h3>Server</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>Test</h2>
+      <div class="card-grid">
+        <a href="https://palace0261.github.io/admin/main/sv/test.html">
+          <div class="card">
+            <h3>Submit</h3>
+          </div>
+        </a>
+        <a href="#">
         <div class="card">
-          <h3>Mission</h3>
-          <p>Delivering excellence in every project</p>
+          <h3>temp</h3>
         </div>
-        <div class="card">
-          <h3>Vision</h3>
-          <p>Leading innovation in our industry</p>
-        </div>
+        </a>
+        <a href="">
         <div class="card">
           <h3>Values</h3>
-          <p>Integrity, quality, and customer focus</p>
         </div>
+        </a>
       </div>
     </section>
 
@@ -126,236 +152,14 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 MyApp. All rights reserved.</p>
+    <p>&copy; 2025 MyApp. All rights reserved.</p>
   </footer>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
 
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-menu a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-menu a:hover {
-      color: #3498db;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .cta-button {
-      background: white;
-      color: #667eea;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .cta-button:hover {
-      transform: scale(1.05);
-    }
-
-    .section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-      color: #2c3e50;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-bottom: 1rem;
-      color: #667eea;
-    }
-
-    .service-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .service-item {
-      background: white;
-      padding: 1.5rem;
-      border-left: 4px solid #667eea;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .contact-form button {
-      background: #667eea;
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    .contact-form button:hover {
-      background: #5568d3;
-    }
-
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #2c3e50;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
-    });
-  </script>
-
+  <!-- script  -->
+  <script src="main.js"></script>
 
 </body>
 </html>
